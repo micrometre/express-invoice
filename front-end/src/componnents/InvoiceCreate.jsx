@@ -152,7 +152,6 @@ const InvoiceCreate = () => {
 
 
   // Log the invoiceItems whenever it changes
-  console.log("Invoice Items:", invoiceItems);
 
   return (
     <div>
@@ -195,7 +194,6 @@ const InvoiceCreate = () => {
 
                 onChange={(e) => {
                   setFromDate(e.target.value);
-                  console.log(e.target.value)
                 }}
               />
             </div>

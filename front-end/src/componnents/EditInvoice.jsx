@@ -4,6 +4,12 @@ import jsPDF from 'jspdf';
 import EditInvoiceForm from './EditInvoiceForm';
 import InvoicePdf from './InvoicePdf';
 
+const baseUrl = import.meta.env.VITE_BASE_URL;
+
+console.log("Base URL:", baseUrl);
+
+
+
 const EditInvoice = () => {
   const reportRef = useRef(null);
   const { invoiceId } = useParams();
@@ -28,7 +34,7 @@ const EditInvoice = () => {
   useEffect(() => {
     const fetchInvoice = async () => {
       try {
-        const response = await fetch(`http://192.168.1.130:5000/invoices/${invoiceId}`);
+        const response = await fetch(`${baseUrl}/invoices/${invoiceId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch invoice');
         }
@@ -76,7 +82,6 @@ const EditInvoice = () => {
   };
 
   const handleDeleteSuccess = (message, invoiceId) => {
-    console.log(message);
     alert(`Invoice ${invoiceId} deleted!`);
     navigate('/invoices');
   };

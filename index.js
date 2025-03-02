@@ -112,7 +112,9 @@ app.post('/', (req, res) => {
 // Get all invoices
 app.get('/', (req, res) => {
   const db = getDb();
-  db.all('SELECT * FROM invoices ORDER BY invoice_number DESC', (err, rows) => {
+  //db.all('SELECT * FROM invoices ORDER BY invoice_number DESC', (err, rows) => {
+    db.all('SELECT * FROM invoices ORDER BY id DESC LIMIT 10', (err, rows) => {
+
     if (err) {
       console.error('Error fetching invoices:', err.message);
       res.status(500).json({ error: 'Failed to fetch invoices' });

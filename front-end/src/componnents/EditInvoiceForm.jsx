@@ -109,7 +109,7 @@ const EditInvoiceForm = ({
           </div>
         </div>
       </div>
-      <div className="border-4 border-blue-600 justify-between items-start mb-8">
+      <div className="border-4 border-blue-50 justify-between items-start mb-8">
         <div className="border-4 border-green-600 bg-white shadow-lg rounded-md">
           <div className="table px-4 min-w-full rounded-md border border-gray-200 overflow-hidden">
             {invoice.items.map((item, index) => (
@@ -117,9 +117,9 @@ const EditInvoiceForm = ({
                 <div>
                   <input
                     type="text"
-                    className="w-20 border p-2"
-                    value={item.item}
-                    onChange={(e) => handleItemChange(index, 'item', e.target.value)}
+                    className="w-22 border p-2"
+                    value={item.name}
+                    onChange={(e) => handleItemChange(index, 'name', e.target.value)}
                   />
                 </div>
                 <div>

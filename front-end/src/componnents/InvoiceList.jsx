@@ -3,6 +3,12 @@ import "../App.css";
 
 import { useParams, useNavigate } from 'react-router-dom';
 
+
+const createUrl = import.meta.env.VITE_BASE_URL;
+
+
+
+
 const InvoiceList = () => {
   const [invoices, setInvoices] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,13 +20,12 @@ const InvoiceList = () => {
   useEffect(() => {
     const fetchInvoices = async () => {
       try {
-        const response = await fetch('http://192.168.1.130:5000');
+        const response = await fetch(createUrl);
         if (!response.ok) {
           throw new Error('Failed to fetch invoices');
         }
         const data = await response.json();
         setInvoices(data);
-        console.log(data)
         navigate('/invoices');
 
       } catch (error) {
