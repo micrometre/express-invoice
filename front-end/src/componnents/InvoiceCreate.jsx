@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { convertToDateString, getDate } from './convertToDateString';
 import { useParams, useNavigate } from 'react-router-dom';
 
+const baseUrl = import.meta.env.VITE_BASE_URL;
+
+console.log("Base URL:", baseUrl);
+
+
 const InvoiceItem = ({ index, onRemoveItem, value, onChange }) => {
   const { item, quantity, price } = value;
 
@@ -99,7 +104,7 @@ const InvoiceCreate = () => {
     event.preventDefault();
     setSubmissionStatus('pending'); // Indicate submission is in progress
     try {
-      const response = await fetch('http://192.168.1.130:5000', { // Replace with your API endpoint
+      const response = await fetch(`${baseUrl}` , { // Replace with your API endpoint
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

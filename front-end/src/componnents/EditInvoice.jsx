@@ -95,7 +95,7 @@ const EditInvoice = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://192.168.1.130:5000/invoices/${invoiceId}`, {
+      const response = await fetch(`${baseUrl}/invoices/${invoiceId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

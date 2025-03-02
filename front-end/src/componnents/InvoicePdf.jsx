@@ -45,7 +45,7 @@ const InvoicePdf = ({ invoice, reportRef, generatePdf }) => {
           {invoice.items.map((item, index) => (
             <div key={index} className="border-4 border-blue-60 grid grid-cols-4 md:grid-cols-4 gap-2 p-2">
               <div className="tile col-span-1">
-                {item.name}
+                {item.item}
               </div>
               <div className="tile col-span-1">
                 {item.quantity}

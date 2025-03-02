@@ -118,8 +118,8 @@ const EditInvoiceForm = ({
                   <input
                     type="text"
                     className="w-22 border p-2"
-                    value={item.name}
-                    onChange={(e) => handleItemChange(index, 'name', e.target.value)}
+                    value={item.item}
+                    onChange={(e) => handleItemChange(index, 'item', e.target.value)}
                   />
                 </div>
                 <div>
