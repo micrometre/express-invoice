@@ -52,6 +52,9 @@ const EditInvoice = () => {
 
   const generatePdf = () => {
     const doc = new jsPDF();
+    doc.setProperties({
+      title: "Request For Quotation"
+  });
     doc.text(`${invoiceId}`, 20, 20);
     const reportContent = reportRef.current.innerHTML;
     doc.html(reportContent, {

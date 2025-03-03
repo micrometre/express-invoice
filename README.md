@@ -59,8 +59,11 @@ Here are examples of how to test the API using `curl`:
 curl -X POST -H "Content-Type: application/json" -d '{ "invoiceNumber": "INV-2023-1001", "invoiceDate": "2023-10-27", "fromDate": "2023-11-27", "clientName": "John Doe", "clientAddress": "123 Main St", "clientPostcode": "SW1A 0AA", "clientEmail": "john.doe@example.com", "clientPhone": "07700900000", "description": "Consulting services for October", "invoiceItems": [ { "name": "Consulting", "quantity": 10, "price": 100 }, { "name": "Project Management", "quantity": 5, "price": 50 } ], "grandTotal": 1250 }' http://localhost:5000/
 
 ```
+
 ![Invoice Creation Form](docs/images/invoice-create.png)
 
 ![List of Invoices](docs/images/invoice-list.png)
 
+
 ![Update Invoices and Generate PDF](docs/images/invoice-update.png)
+![Update Invoices and Generate PDF](docs/
